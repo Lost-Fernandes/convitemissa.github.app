@@ -9,7 +9,7 @@ document.getElementById('form-homenagem').addEventListener('submit', function(e)
     if (nome && mensagem) {
         // Números de WhatsApp para enviar a mensagem
         const numero1 = '5583996750737'; // Substitua com o número real
-        const numero2 = '5511888888888'; // Substitua com o número real
+        const numero2 = '5583982155088'; // Substitua com o número real
 
         // Codificar a mensagem para ser usada na URL
         const mensagemCodificada = encodeURIComponent(`${nome}: ${mensagem}`);
