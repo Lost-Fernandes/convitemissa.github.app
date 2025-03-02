@@ -1,5 +1,3 @@
-const criadorId = 'admin'; // Identificador do criador do aplicativo
-
 document.getElementById('form-homenagem').addEventListener('submit', function(e) {
     e.preventDefault();
   
@@ -7,22 +5,18 @@ document.getElementById('form-homenagem').addEventListener('submit', function(e)
     const mensagem = document.getElementById('mensagem').value;
   
     if (nome && mensagem) {
-        // Números de WhatsApp para enviar a mensagem
-        const numero1 = '5583996750737'; // Substitua com o número real
-        const numero2 = '5583982155088'; // Substitua com o número real
-
-        // Codificar a mensagem para ser usada na URL
-        const mensagemCodificada = encodeURIComponent(`${nome}: ${mensagem}`);
+        // Mensagem a ser enviada
+        const mensagemFormatada = `*${nome}:* ${mensagem}`;
         
-        // Criar o link para enviar a mensagem para o WhatsApp dos dois números
-        const linkWhatsApp1 = `https://wa.me/${numero1}?text=${mensagemCodificada}`;
-        const linkWhatsApp2 = `https://wa.me/${numero2}?text=${mensagemCodificada}`;
-        
-        // Abrir os links em novas abas para enviar a mensagem automaticamente
-        window.open(linkWhatsApp1, '_blank');
-        window.open(linkWhatsApp2, '_blank');
+        // Números de WhatsApp para os quais a mensagem será enviada
+        const numero1 = 'whatsapp://send?phone=+558382155088&text=' + encodeURIComponent(mensagemFormatada);
+        const numero2 = 'whatsapp://send?phone=+5583996750737&text=' + encodeURIComponent(mensagemFormatada);
 
-        // Limpar campos após enviar a mensagem
+        // Enviar mensagem para os dois números
+        window.open(numero1, '_blank');  // Enviar para o primeiro número
+        window.open(numero2, '_blank');  // Enviar para o segundo número
+        
+        // Limpar campos após envio
         document.getElementById('nome').value = '';
         document.getElementById('mensagem').value = '';
     }
