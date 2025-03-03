@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Missa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fundo musical -->
+  <audio autoplay loop>
+    <source src="./fundomusical.mp3" type="audio/mp3">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <!-- Seção de Convite -->
+  <section id="convite" class="fade-in">
+    <div class="convite-container">
+      <h1>Convite de Missa de Maria do Carmo Fernandes Costa</h1>
+      <p>* 09/03/1951 ✝ 04/02/2025</p>
+      <p class="mensagem">
+        "Para sempre em nossos corações. Sua luz e amor jamais serão esquecidos."
+      </p>
+      <div class="info-missa">
+        <p><strong>Missa de 30º Dia:</strong></p>
+        <p>Data: 05/03/2025</p>
+        <p>Hora: 16h</p>
+        <p>Local: Igreja São Sebastião - São Tomé 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Álbum de Fotos -->
+  <section id="album" class="fade-in">
+    <h2>Álbum de Memórias</h2>
+    <div class="galeria">
+      <img src="./pascoalmainha.jpg" alt="Foto 1">
+      <img src="./juniormainha.jpg" alt="Foto 2">
+      <img src="./netomainha.jpg" alt="Foto 3">
+      <img src="./familiamainha.jpg" alt="Foto 4">
+      <img src="./filhamainha.jpg" alt="Foto 5">
+      <img src="./netosmainha.jpg" alt="Foto 6">
+    </div>
+  </section>
+
+  <!-- Seção de Homenagens -->
+  <section id="homenagens" class="fade-in">
+    <h2>Deixe sua Mensagem!</h2>
+    <form id="form-homenagem">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Confirme</button>
+    </form>
+    <div id="mensagens-container"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
