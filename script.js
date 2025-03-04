@@ -2,11 +2,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('fundo-musical');
 
-  // Tenta reproduzir o áudio automaticamente
-  audio.muted = false; // Remove o mute
-  audio.play().catch(() => {
-    console.log("Autoplay bloqueado pelo navegador. O áudio só será reproduzido após interação do usuário.");
-  });
+  // Função para reproduzir o áudio
+  const playAudio = () => {
+    audio.play().then(() => {
+      console.log("Áudio reproduzido com sucesso!");
+    }).catch((error) => {
+      console.log("Autoplay bloqueado pelo navegador. O áudio só será reproduzido após interação do usuário.");
+    });
+  };
+
+  // Tenta reproduzir o áudio assim que a página carregar
+  playAudio();
+
+  // Adiciona um evento de toque (para dispositivos móveis)
+  document.body.addEventListener('touchstart', () => {
+    playAudio();
+  }, { once: true }); // O evento é removido após o primeiro toque
+
+  // Adiciona um evento de clique (para desktop)
+  document.body.addEventListener('click', () => {
+    playAudio();
+  }, { once: true }); // O evento é removido após o primeiro clique
 });
 
 // Código para o envio de mensagem no WhatsApp
